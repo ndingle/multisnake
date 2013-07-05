@@ -1,0 +1,14 @@
+Command:
+rename
+
+Description:
+Renames a given player to a new name. This function must abide by the naming files (limited special characters, 1-25 characters).
+
+Syntax:
+rename <name> <new name> 
+
+Examples:
+rename Dave Bob
+Player Dave has been renamed to Bob.
+rename Dave "Keep off"
+Player Dave has been renamed to Keep off.

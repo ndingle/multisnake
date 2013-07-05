@@ -1,0 +1,15 @@
+Command:
+boot
+
+Description:
+Boot is used to remove a player from the server without banning them from joining again. To remove the player and ban permenantly use ban. 
+Kick is the same command. 
+When sending a custom message ensure that you place quotes around the command.
+
+Syntax:
+boot <name>
+boot <name> <"message to player">
+
+Examples:
+boot Dave
+boot Dave "You've been here too long mate."

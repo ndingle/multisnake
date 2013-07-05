@@ -1,0 +1,19 @@
+
+Multi-snake Server commands (v0.1)
+
+ ban*
+ boot
+ invincibletime
+ kick
+ gamespeed
+ gridsize
+ help
+ players
+ maxplayers
+ rename
+ recolour
+ whois*
+
+  * is an incomplete command. 
+  
+For specific help on a command type 'help <command>' to print its documentation.

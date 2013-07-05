@@ -1,0 +1,13 @@
+Command:
+help
+
+Description:
+Provides information about server commands. It will list the commands available or provide detail on a specific command.
+
+Syntax:
+help
+help <command>
+
+Examples:
+help
+help kick

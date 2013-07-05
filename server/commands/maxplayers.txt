@@ -1,0 +1,16 @@
+Command:
+maxplayers
+
+Description:
+Sets or gets the value of the maximum players allowed on the server. The number of players cannot exceed this value (players will not be retrospectively kicked).
+Default value is 8.
+
+Syntax:
+maxplayers -- gets the value
+maxplayers <num> -- sets the value
+
+Examples:
+maxplayers
+Max Players is 8.
+maxplayers 10
+Max Players set to 10.

@@ -1,0 +1,16 @@
+Command:
+gamespeed
+
+Description:
+Sets or gets the value of the game's update speed. Note that the higher the value the more information is sent to and from the server. BE CAREFUL.
+Default value is 5.
+
+Syntax:
+gamespeed -- gets the value
+gamespeed <time> -- sets the value
+
+Examples:
+gamespeed
+Gamespeed is 5.
+gamespeed 10
+Gamespeed set to 10.

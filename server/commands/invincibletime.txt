@@ -1,0 +1,16 @@
+Command:
+invincibletime
+
+Description:
+Sets or gets the value of time allocated to players to be invincible for when they first begin. Changing variable will effect all new users.
+Default value is 15.
+
+Syntax:
+invincibletime -- gets the value
+invincibletime <time> -- sets the value
+
+Examples:
+invincibletime
+Invincible Time is 15.
+invincibletime 50
+Invincible Time set to 50.

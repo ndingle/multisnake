@@ -1,0 +1,14 @@
+Command:
+whois
+
+Description:
+Provides indepth information on a given player.
+
+Syntax:
+whois <name>
+
+Examples:
+whois Dave
+<Insert example>
+whois "Some guy"
+<Insert example>

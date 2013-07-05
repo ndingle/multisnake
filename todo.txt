@@ -1,0 +1,1 @@
+[1] Fix performance issues after long play time

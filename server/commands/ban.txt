@@ -1,0 +1,13 @@
+Command:
+ban
+
+Description:
+Ban removes a player from the server, with or without a custom message. Ban also ensures that the same IP address cannot re-connect.
+
+Syntax:
+ban <name>
+ban <name> <"message to player">
+
+Examples:
+ban Dave
+ban Dave "Why are you still here?!"

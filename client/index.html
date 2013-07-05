@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multi-Snake - v1.0</title>
+
+	<meta name="keywords" content="Snake,Game,Dingotech,Multi-Snake">
+	<meta name="author" content="Nicholas Dingle">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+
+	<link rel="stylesheet" type="text/css" href="./css/base.css" />
+	<link rel="stylesheet" href="./css/colorPicker.css" type="text/css" />
+	<script type="text/javascript" src="./js/jquery-2.0.0.js"></script>
+	<script type="text/javascript" src="./js/jquery.colorPicker.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			WebsocketTest();
+			$('#colour').colorPicker({transparency: true,showHexField: true});
+			
+			//THANK YOU: http://jsfiddle.net/HUG2Z/1/
+			$(".playerTooltip").mouseover(function(event) {
+				var name = this.parentNode.parentNode.id;
+				name = name.substring(6,name.length);
+				showBox(event,name);
+			});
+			
+			$("#players").mouseleave(hideBox);
+
+		});
+		
+		function showBox(event,name){
+			$(".tooltip").html(GetPlayerInfo(name));
+			var x = event.pageX + 10;
+			var y = event.pageY + 10;
+			if(!$(".tooltip").is(":visible")){
+				$(".tooltip").fadeIn();
+			}
+			$(".tooltip").offset({ left: x, top: y });
+		}
+		
+		function hideBox(){
+			$('.tooltip').fadeOut();
+		}
+		
+		function Connect() {
+			$(document.getElementById("frm")).find("#connect").attr("disabled","disabled");
+			ConnectToServer("localhost",document.getElementById("playerName").value,document.getElementById("colour").value);
+		}
+		
+		function WebsocketTest() {
+			if(!("WebSocket" in window)) {
+				alert("Your browser doesn't support this game, it needs websockets.\n\nIE10+, Opera 12+, Chrome 16+, Firefox 11+, Safari 6+ are what you need mate.");
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="canvas">
+
+			<canvas id="canvas" width="0" height="0">
+			</canvas>
+			
+			<div id="messageOverlay" class="messageOverlay table hidden">
+				<p id="message">test</p>
+			</div>
+			
+			<form id="frm" onsubmit="return false;">
+				<table class="table">
+					<tr>
+						<td colspan="2"><h2>Multi Snake</h2></td>
+					</tr>
+					<tr>
+						<td class="tableLabel"><label for="colour"><strong>Color</strong></label></td>
+						<td class="tableInput"><input id="colour" type="text" name="colour" value="#333399" style="display: inline; float: left;" /> </td>
+					</tr>
+					<tr>
+						<td class="tableLabel"><label for="playerName"><strong>Name</strong></label></td>
+						<td class="tableInput"><input type="text" id="playerName" autofocus /> </td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="connect" value="Connect" onClick="Connect()" /></td>
+					</tr>
+				</table>
+			</form>
+
+		</div>
+		<div id="players" class="players hidden">
+			<span class="plPicture"></span>
+			<span class="plName">Name</span>
+			<span class="plKills hidden"><strong>Kills</strong></span>
+			<span class="plTime hidden"><strong>Alive</strong></span>
+			<span class="plScore"><strong>Score</strong></span>
+			<div id="player" class="player hidden">
+				<span class="plPicture">
+					<img id="picture" class="playerTooltip" src="img/snake.png" />
+				</span>
+				
+				<span class="plName">Name</span>
+				<span class="plKills hidden">Kills</span>
+				<span class="plTime hidden">Time</span>
+				<span class="plScore">Score</span>
+			</div>
+		</div>
+		<div class="tooltip">
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="./js/websocket.js"></script>
+	<script type="text/javascript" src="./js/graphics.js"></script>
+	<script type="text/javascript" src="./js/client.js"></script>
+	
+</body>
+</html>

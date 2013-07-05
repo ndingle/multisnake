@@ -1,0 +1,14 @@
+Command:
+recolour
+
+Description:
+Changes the colour of a given player.
+
+Syntax:
+recolour <name> <colour> 
+
+Examples:
+recolour Dave #ff00ff
+Player Dave has been recoloured to #ff00ff.
+recolour "Some guy" #00ff00
+Player Some guy has been recoloured to #00ff00.

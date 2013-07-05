@@ -1,0 +1,16 @@
+Command:
+gridsize
+
+Description:
+Resizes the grid that the server is running while the game is playing. All connected players have their grids dynamically updated.
+Default value is 35.
+
+Syntax:
+gridsize -- prints the value
+gridsize <size> -- sets the value
+
+Examples:
+gridsize
+Gridsize is 35.
+gridsize 50
+Gridsize set to 50.
